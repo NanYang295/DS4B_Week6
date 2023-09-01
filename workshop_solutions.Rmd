@@ -43,3 +43,33 @@ skim(data)
 ```
 
 ## An interesting plot
+
+```{r}
+#Let us make a plot using ggplot.
+
+library(ggplot2)
+
+# Let us make a gemo_plot，NumLimbsMissing is the x，NumLimbsRegenerating is the y，and use Sex to color it.
+
+ggplot(data, aes(x = NumLimbsMissing, y = NumLimbsRegenerating, color = Sex)) +
+  geom_point() +
+  labs(x = "Number of Limbs Missing", y = "Number of Limbs Regenerating", color = "Sex") +
+  theme_minimal()
+
+# Let us add the facets to make it better，using Sex and Gravid.
+ggplot(data, aes(x = NumLimbsMissing, y = NumLimbsRegenerating)) +
+  geom_point() +
+  facet_grid(Sex ~ Gravid) +
+  labs(x = "Number of Limbs Missing", y = "Number of Limbs Regenerating") +
+  theme_minimal()
+
+# We can also make a boxplot，to compare the distribution of Weight in different sex.
+
+ggplot(data, aes(x = Sex, y = weight, fill = Sex)) +
+  geom_boxplot() +
+  labs(x = "Sex", y = "weight", fill = "Sex") +
+  theme_minimal()
+
+# We got it!
+```
+
