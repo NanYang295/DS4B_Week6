@@ -17,5 +17,29 @@ output:
 # Bonus section
 
 ## Loading the data
+```{r}
+#First let us load the data.
+
+install.packages("tidyverse")
+library(tidyverse)
+library(readr)
+data <- read_csv("raw_data/data.csv")
+View(data)
+```
+```{r}
+#Let us have a look on the data.
+library(skimr)
+skim(data)
+
+#We can see the Data contained in this file are the following:
+#NumLimbsMissing: Count data of the number of limbs missing on experimental animals
+#NumLimbsRegenerating: Count data of the number of limbs regenerating based on the number of limb buds
+#Vitellogenic: Yes (1) or No (0) data for whether females are vitellogenic
+#Gravid: Yes (1) or No (0) data for whether females are gravid
+#TempC: Mean temperature in Celcius during the experimental period
+#VO2_ml_per_h: Metabolic rate (ml oxygen consumed per h)
+#Weight: Dry mass of experimental animal in grams
+#Sex: Female (F) or Male (M)
+```
 
 ## An interesting plot
